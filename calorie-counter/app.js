@@ -42,4 +42,39 @@ const addEntry = function () {
 
 addEntryButton.addEventListener("click", addEntry);
 
-const getCaloriesFromInputs = function (list) {};
+const getCaloriesFromInputs = function (list) {
+  let calories = 0;
+
+  for (const item of list) {
+    const currVal = cleanInputString(item.value);
+    const invalidInputMatch = isInvalidInput(currVal);
+  }
+  if (invalidInputMatch) {
+    alert(`Invalid Input: ${invalidInputMatch[0]}`);
+    isError = true;
+    return null;
+  }
+  calories += Number(currVal);
+
+  return calories;
+};
+
+const calculateCalories = function (e) {
+  e.preventDefault();
+  isError = false;
+  const breakfastNumberInputs = document.querySelectorAll(
+    "#breakfast input[type=number]"
+  );
+  const lunchNumberInputs = document.querySelectorAll(
+    "#lunch input[type=number]"
+  );
+  const dinnerNumberInputs = document.querySelectorAll(
+    "#dinner input[type=number]"
+  );
+  const snacksNumberInputs = document.querySelectorAll(
+    "#snacks input[type=number]"
+  );
+  const exerciseNumberInputs = document.querySelectorAll(
+    "#exercise input[type=number]"
+  );
+};
